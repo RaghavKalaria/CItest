@@ -110,15 +110,9 @@ stages:
               downloadType: "single"
               artifactName: "$(ArtifactName)"
               downloadPath: "$(System.DefaultWorkingDirectory)"
-          - task: PublishAzureDevOpsExtension@4
+          - task: Bash@3
             inputs:
-              connectTo: 'VsTeam'
-              connectedServiceName: 'CIServiceConnection' # Change to whatever you named the service connection
-              fileType: 'vsix'
-              vsixFile: 'RKmindstix.build-release-task-0.0.2.vsix'
-              publisherId: '$(PublisherID)'
-              extensionId: '$(ExtensionID)'
-              extensionName: '$(ExtensionName)'
-              updateTasksVersion: false
-              extensionVisibility: 'private' # Change to public if you're publishing to the marketplace
-              extensionPricing: 'free'
+              targetType: 'inline'
+              script: |
+                tfx extension publish --manifest-globs vss-extension.json --share-with RKtrialMS
+          

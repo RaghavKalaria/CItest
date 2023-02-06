@@ -15,6 +15,11 @@ stages:
           - task: TfxInstaller@4
             inputs:
               version: "v0.x"
+          - task: CmdLine@2
+            inputs:
+              script: |
+                pwd
+                ls -a
           - task: Npm@1
             inputs:
               command: 'install'

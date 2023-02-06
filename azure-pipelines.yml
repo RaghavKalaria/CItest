@@ -23,7 +23,7 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'
-              workingDir: '' # Update to the name of the directory of your task
+              workingDir: 'buildandreleasetask' # Update to the name of the directory of your task
           - task: Bash@3
             displayName: Compile Javascript
             inputs:
@@ -35,7 +35,7 @@ stages:
             inputs:
               command: 'custom'
               workingDir: 'tests' # Update to the name of the directory of your task's tests
-              customCommand: 'test' # See the definition in the explanation section below - it may be called test
+              customCommand: 'buildandreleasetask/test' # See the definition in the explanation section below - it may be called test
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: 'JUnit'
@@ -50,7 +50,7 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'
-              workingDir: '' # Update to the name of the directory of your task
+              workingDir: 'buildandreleasetask' # Update to the name of the directory of your task
           - task: Bash@3
             displayName: Compile Javascript
             inputs:

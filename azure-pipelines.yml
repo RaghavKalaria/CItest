@@ -44,7 +44,7 @@ stages:
               targetType: 'inline'
               script: |
                 cd buildandreleasetask/tests # Update to the name of the directory of your task
-                mocha .suite.js
+                mocha _suite.js
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: 'JUnit'

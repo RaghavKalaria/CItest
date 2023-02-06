@@ -65,7 +65,7 @@ stages:
             inputs:
               targetType: "inline"
               script: |
-                cd TaskDirectory # Update to the name of the directory of your task
+                cd buildandreleasetask # Update to the name of the directory of your task
                 tsc
           - task: QueryAzureDevOpsExtensionVersion@4
             name: QueryVersion

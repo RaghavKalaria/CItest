@@ -31,11 +31,20 @@ stages:
               script: |
                 cd buildandreleasetask # Update to the name of the directory of your task
                 tsc
-          - task: Npm@1
+          - task: Bash@3
             inputs:
-              command: 'custom'
-              workingDir: 'buildandreleasetask/tests' # Update to the name of the directory of your task's tests
-              customCommand: 'testScript' # See the definition in the explanation section below - it may be called test
+              targetType: 'inline'
+              script: |
+                cd buildandrelease/tests
+                npm install mocha --save-dev -g
+                npm install sync-request --save-dev
+                npm install @types/mocha --save-dev
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                cd buildandreleasetask/tests # Update to the name of the directory of your task
+                mocha _suite.js
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: 'JUnit'

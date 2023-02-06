@@ -114,5 +114,5 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                tfx extension publish --manifest-globs vss-extension.json --share-with RKtrialMS
+                printf '$(PAT)' |tfx extension publish --manifest-globs vss-extension.json --share-with RKtrialMS
           

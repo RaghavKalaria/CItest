@@ -115,7 +115,7 @@ stages:
               connectTo: 'VsTeam'
               connectedServiceName: 'CIServiceConnection' # Change to whatever you named the service connection
               fileType: 'vsix'
-              vsixFile: '$(PublisherID).$(ExtensionName)/$(PublisherID)..vsix'
+              vsixFile: '$(PublisherID).$(ExtensionName)/$(PublisherID).vsix'
               publisherId: '$(PublisherID)'
               extensionId: '$(ExtensionID)'
               extensionName: '$(ExtensionName)'

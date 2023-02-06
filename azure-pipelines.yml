@@ -35,6 +35,14 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
+                cd buildandrelease/tests
+                npm install mocha --save-dev -g
+                npm install sync-request --save-dev
+                npm install @types/mocha --save-dev
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
                 cd buildandreleasetask/tests # Update to the name of the directory of your task
                 mocha .suite.js
           - task: PublishTestResults@2

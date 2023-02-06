@@ -9,7 +9,7 @@ async function run() {
         }
         console.log('Hello', inputString);
     }
-    catch (err) {
+    catch (err: any) {
         tl.setResult(tl.TaskResult.Failed, err.message);
     }
 }

@@ -6,7 +6,7 @@ steps:
 - task: CItest@0
   inputs:
     samplestring: 'raghav' 
-- script: echo $(this_is_my_instance_name_Format).samplestring)
+- script: echo $(this_is_my_instance_name_Format.samplestring)
   displayName: 'Run a one-line script'
 
 - script: |

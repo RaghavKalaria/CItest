@@ -12,7 +12,7 @@
         "Minor": 1,
         "Patch": 0
     },
-    "instanceNameFormat": "Echo this_is_my_instance_name_Format)",
+    "instanceNameFormat": "Echo this_is_my_instance_name_Format",
     "inputs": [
         {
             "name": "samplestring",

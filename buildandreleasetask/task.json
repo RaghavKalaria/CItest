@@ -20,7 +20,13 @@
             "label": "Sample String",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "A sample string"
+            "helpMarkDown": "Just a sample strings"
+        }
+    ],
+    "outputVariables": [
+        {
+            "name": "output",
+            "description": "Saves the output"
         }
     ],
     "execution": {
